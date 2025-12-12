@@ -1,36 +1,29 @@
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import '@/styles/globals.css';
-import { Navbar } from '@/components/interfaces/navbar';
-import { Footer } from '@/components/interfaces/footer';
+import type React from "react"
+import type { Metadata } from "next"
+import { Geist, Geist_Mono } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import "@/styles/globals.css";
 
-const geistSans = Geist({
-    variable: '--font-geist-sans',
-    subsets: ['latin'],
-});
+const _geist = Geist({ subsets: ["latin"] })
+const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
-const geistMono = Geist_Mono({
-    variable: '--font-geist-mono',
-    subsets: ['latin'],
-});
-
+// <CHANGE> Metadata actualizada para el portal de empleados
 export const metadata: Metadata = {
-    title: 'Plantilla Next.JS | Devanthos',
-    description: 'Agrega una descripción atractiva para mejorar el SEO de tu página.',
-};
+  title: "Portal de Empleados | HR Connect",
+  description: "Plataforma centralizada para gestión de recursos humanos y comunicación interna",
+}
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-    return (
-        <html lang="es">
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                <Navbar />
-                {children}
-                <Footer />
-            </body>
-        </html>
-    );
+  return (
+    <html lang="es">
+      <body className={`font-sans antialiased`}>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  )
 }
