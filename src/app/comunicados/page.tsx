@@ -28,9 +28,9 @@ const categoryLabels = {
 }
 
 const priorityColors = {
-  high: "bg-destructive text-destructive-foreground",
-  medium: "bg-warning text-warning-foreground",
-  low: "bg-secondary text-secondary-foreground",
+  high: "bg-red-700/10 text-red-700",
+  medium: "bg-yellow-700/10 text-yellow-700",
+  low: "bg-secondary/10 text-secondary-foreground",
 }
 
 export default function ComunicadosPage() {
@@ -47,10 +47,8 @@ export default function ComunicadosPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Sidebar />
-      <main className="pl-64 transition-all duration-300">
-        <Header title="Comunicados" subtitle="Noticias y anuncios de la empresa" />
+    <div className="bg-background">
+      <main className="transition-all duration-300">
         <div className="p-6 space-y-6">
           {/* Quick Stats */}
           <div className="grid gap-4 md:grid-cols-4">
