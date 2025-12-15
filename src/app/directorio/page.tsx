@@ -1,8 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Sidebar } from "@/components/sidebar"
-import { Header } from "@/components/header"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -20,8 +18,8 @@ const statusLabels = {
 }
 
 const statusColors = {
-  active: "bg-success text-success-foreground",
-  away: "bg-warning text-warning-foreground",
+  active: "bg-green-500 text-white",
+  away: "bg-yellow-500 text-white",
   offline: "bg-muted text-muted-foreground",
 }
 
@@ -40,10 +38,8 @@ export default function DirectorioPage() {
   })
 
   return (
-    <div className="min-h-screen bg-background">
-      <Sidebar />
-      <main className="pl-64 transition-all duration-300">
-        <Header title="Directorio de Empleados" subtitle={`${employees.length} empleados en la organización`} />
+    <div className="bg-background">
+      <main className="transition-all duration-300">
         <div className="p-6 space-y-6">
           {/* Filters */}
           <div className="flex flex-col sm:flex-row gap-4">
@@ -53,11 +49,11 @@ export default function DirectorioPage() {
                 placeholder="Buscar por nombre, email o cargo..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-9"
+                className="pl-9 h-12"
               />
             </div>
             <Select value={department} onValueChange={setDepartment}>
-              <SelectTrigger className="w-full sm:w-48">
+              <SelectTrigger className="w-full data-[size=default]:h-12 sm:w-48">
                 <SelectValue placeholder="Departamento" />
               </SelectTrigger>
               <SelectContent>
@@ -107,8 +103,8 @@ export default function DirectorioPage() {
                         <span
                           className={cn(
                             "absolute bottom-1 right-1 h-4 w-4 rounded-full border-2 border-card",
-                            employee.status === "active" && "bg-success",
-                            employee.status === "away" && "bg-warning",
+                            employee.status === "active" && "bg-green-500",
+                            employee.status === "away" && "bg-yellow-500",
                             employee.status === "offline" && "bg-muted-foreground",
                           )}
                         />
