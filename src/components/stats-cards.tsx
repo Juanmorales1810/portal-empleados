@@ -15,21 +15,21 @@ const stats = [
     value: vacationBalance.available.toString(),
     change: `de ${vacationBalance.total} días`,
     icon: Calendar,
-    color: "text-accent",
+    color: "text-primary",
   },
   {
     name: "Documentos",
     value: documents.length.toString(),
     change: "actualizados",
     icon: FileCheck,
-    color: "text-chart-3",
+    color: "text-primary",
   },
   {
     name: "Productividad",
     value: "94%",
     change: "+5% vs anterior",
     icon: TrendingUp,
-    color: "text-success",
+    color: "text-primary",
   },
 ]
 
