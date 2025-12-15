@@ -1,6 +1,4 @@
 "use client"
-import { Sidebar } from "@/components/sidebar"
-import { Header } from "@/components/header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -14,10 +12,8 @@ export default function NominasPage() {
   const latestPayroll = payrollRecords.find((p) => p.status === "paid")
 
   return (
-    <div className="min-h-screen bg-background">
-      <Sidebar />
-      <main className="pl-64 transition-all duration-300">
-        <Header title="Nóminas y Beneficios" subtitle="Consulta tus nóminas y gestiona tus beneficios" />
+    <div className="bg-background">
+      <main className="transition-all duration-300">
         <div className="p-6 space-y-6">
           <Tabs defaultValue="payroll" className="space-y-6">
             <TabsList className="bg-secondary">
