@@ -29,9 +29,9 @@ const categoryLabels = {
 
 const categoryColors = {
   policy: "bg-primary/10 text-primary",
-  contract: "bg-accent/10 text-accent",
-  form: "bg-chart-3/10 text-chart-3",
-  training: "bg-chart-4/10 text-chart-4",
+  contract: "bg-zinc-500/10 text-zinc-500",
+  form: "bg-green-500/10 text-green-500",
+  training: "bg-blue-500/10 text-blue-500",
 }
 
 export default function DocumentosPage() {
@@ -53,10 +53,8 @@ export default function DocumentosPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Sidebar />
-      <main className="pl-64 transition-all duration-300">
-        <Header title="Documentos" subtitle="Accede a todos tus documentos y recursos" />
+    <div className="bg-background">
+      <main className="transition-all duration-300">
         <div className="p-6 space-y-6">
           {/* Category Cards */}
           <div className="grid gap-4 md:grid-cols-4">
