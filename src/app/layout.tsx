@@ -1,11 +1,13 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
+import { SiteHeader } from "@/components/site-header"
+import { AppSidebar } from "@/components/app-sidebar"
+import { currentUser } from "@/lib/data"
+import {
+  SidebarInset,
+  SidebarProvider,
+} from "@/components/ui/sidebar"
 import "@/styles/globals.css";
-
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 // <CHANGE> Metadata actualizada para el portal de empleados
 export const metadata: Metadata = {
@@ -18,12 +20,33 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+    const greeting = getGreeting()
   return (
     <html lang="es">
       <body className={`font-sans antialiased`}>
-        {children}
-        <Analytics />
+        <SidebarProvider
+          style={
+            {
+              "--sidebar-width": "calc(var(--spacing) * 72)",
+              "--header-height": "calc(var(--spacing) * 12)",
+            } as React.CSSProperties
+          }
+        >
+          <AppSidebar variant="inset" collapsible="icon" />
+          <SidebarInset>
+            <SiteHeader title={`${greeting}, ${currentUser.name.split(" ")[0]}`}
+                      subtitle="Aquí tienes un resumen de tu actividad" />
+            {children}
+          </SidebarInset>
+        </SidebarProvider>
       </body>
     </html>
   )
+}
+
+function getGreeting() {
+  const hour = new Date().getHours()
+  if (hour < 12) return "Buenos días"
+  if (hour < 18) return "Buenas tardes"
+  return "Buenas noches"
 }
