@@ -16,21 +16,21 @@ const actions = [
     description: "Última nómina disponible",
     icon: CreditCard,
     href: "/nominas",
-    color: "bg-accent/10 text-accent hover:bg-accent/20",
+    color: "bg-primary/10 text-primary hover:bg-primary/20",
   },
   {
     name: "Documentos",
     description: "Accede a tus documentos",
     icon: FileText,
     href: "/documentos",
-    color: "bg-chart-3/10 text-chart-3 hover:bg-chart-3/20",
+    color: "bg-primary/10 text-primary hover:bg-primary/20",
   },
   {
     name: "Directorio",
     description: "Buscar compañeros",
     icon: Users,
     href: "/directorio",
-    color: "bg-chart-4/10 text-chart-4 hover:bg-chart-4/20",
+    color: "bg-primary/10 text-primary hover:bg-primary/20",
   },
 ]
 
