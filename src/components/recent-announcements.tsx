@@ -5,7 +5,7 @@ import { formatDistanceToNow } from "date-fns"
 import { es } from "date-fns/locale"
 
 const priorityColors = {
-  high: "bg-destructive text-destructive-foreground",
+  high: "bg-destructive text-white",
   medium: "bg-warning text-warning-foreground",
   low: "bg-secondary text-secondary-foreground",
 }
