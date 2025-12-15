@@ -39,9 +39,9 @@ const statusLabels = {
 }
 
 const statusColors = {
-  pending: "bg-warning/10 text-warning border-warning/20",
-  approved: "bg-success/10 text-success border-success/20",
-  rejected: "bg-destructive/10 text-destructive border-destructive/20",
+  pending: "bg-yellow-700/10 text-yellow-700 border-yellow-700/20",
+  approved: "bg-green-700/10 text-green-700 border-green-700/20",
+  rejected: "bg-red-700/10 text-red-700 border-red-700/20",
 }
 
 export default function VacacionesPage() {
@@ -50,10 +50,8 @@ export default function VacacionesPage() {
   const usedPercentage = (vacationBalance.used / vacationBalance.total) * 100
 
   return (
-    <div className="min-h-screen bg-background">
-      <Sidebar />
-      <main className="pl-64 transition-all duration-300">
-        <Header title="Gestión de Vacaciones" subtitle="Solicita y gestiona tus días de ausencia" />
+    <div className="bg-background">
+      <main className="transition-all duration-300">
         <div className="p-6 space-y-6">
           {/* Balance Summary */}
           <div className="grid gap-4 md:grid-cols-4">
@@ -73,8 +71,8 @@ export default function VacacionesPage() {
             <Card className="bg-card">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-lg bg-success/10">
-                    <CheckCircle className="h-6 w-6 text-success" />
+                  <div className="p-3 rounded-lg bg-green-700/10">
+                    <CheckCircle className="h-6 w-6 text-green-700" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Disponibles</p>
@@ -86,8 +84,8 @@ export default function VacacionesPage() {
             <Card className="bg-card">
               <CardContent className="p-6">
                 <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-lg bg-warning/10">
-                    <Clock className="h-6 w-6 text-warning" />
+                  <div className="p-3 rounded-lg bg-yellow-700/10">
+                    <Clock className="h-6 w-6 text-yellow-700" />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Pendientes</p>
@@ -128,7 +126,7 @@ export default function VacacionesPage() {
             {/* Calendar & New Request */}
             <div className="space-y-6">
               <Card className="bg-card">
-                <CardHeader className="pb-2">
+                <CardHeader className="">
                   <CardTitle className="text-lg">Calendario</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -137,7 +135,7 @@ export default function VacacionesPage() {
                     selected={date}
                     onSelect={setDate}
                     locale={es}
-                    className="rounded-md border-0"
+                    className="rounded-md border-0 w-full"
                   />
                 </CardContent>
               </Card>
