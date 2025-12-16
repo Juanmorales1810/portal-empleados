@@ -44,11 +44,6 @@ const data = {
       icon: Users,
     },
     {
-      title: "Estadísticas",
-      url: "/estadisticas",
-      icon: ChartBar,
-    },
-    {
       title: "Vacaciones",
       url: "/vacaciones",
       icon: Calendar,
